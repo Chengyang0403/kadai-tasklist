@@ -3,6 +3,7 @@
 @section('content')
 
 <h1>id = {{ $task->id }} のTasks詳細ページ</h1>
+    <p>タイトル: {{ $task->status }}</p>
 
     <p>{{ $task->content }}</p>
     
