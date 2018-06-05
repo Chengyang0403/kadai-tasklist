@@ -5,17 +5,26 @@
 <h1>id: {{ $task->id }} のTask編集ページ</h1>
 
 
-    {!! Form::model($task, ['route' => ['tasks.update', $task->id], 'method' => 'put']) !!}
-    
-        {!! Form::label('status', 'タイトル:') !!}
-        {!! Form::text('status') !!}
+   <div class="row">
+        <div class="col-xs-12  col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6
+">
+            {!! Form::model($task, ['route' => 'tasks.store']) !!}
 
-        {!! Form::label('content', 'Task:') !!}
-        {!! Form::text('content') !!}
+                <div class="form-group">
+                    {!! Form::label('status', 'Status:') !!}
+                    {!! Form::text('status', null, ['class' => 'form-control']) !!}
+                </div>
 
-        {!! Form::submit('更新') !!}
+                <div class="form-group">
+                    {!! Form::label('content', 'Task:') !!}
+                    {!! Form::text('content', null, ['class' => 'form-control']) !!}
+                </div>
 
-    {!! Form::close() !!}
+                {!! Form::submit('投稿', ['class' => 'btn btn-primary']) !!}
+
+            {!! Form::close() !!}
+        </div>
+    </div>
 
 
 @endsection
